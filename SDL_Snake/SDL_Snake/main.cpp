@@ -1,6 +1,10 @@
 #include "Game.h"
 
+#ifdef _DEBUG
+
 #undef main
+
+#endif
 
 
 int main(int argc, char* argv[])
