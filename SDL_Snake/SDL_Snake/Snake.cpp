@@ -102,3 +102,9 @@ void C_Snake::Eat()
 {
 	AddTailrect();
 }
+
+void C_Snake::SetSnakeheadPosition(int x, int y)
+{
+	_SNAKEHEAD.x = x;
+	_SNAKEHEAD.y = y;
+}

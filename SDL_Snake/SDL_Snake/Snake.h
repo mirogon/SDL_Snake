@@ -15,6 +15,9 @@ public:
 	void Eat();
 	void Move();
 	void Render();
+
+	void SetSnakeheadPosition(int x, int y);
+
 	const SDL_Rect& GetRect()
 	{
 		return _SNAKEHEAD;

@@ -13,11 +13,13 @@ public:
 	void Game_Over();
 	void Game_Reset();
 
+
 private:
 
 	void GenerateFood();
 	void CheckFood();
 	bool CheckSnakeDead();
+	void CheckSnakeInBorders();
 
 	C_Snake snake;
 	C_Food food;
@@ -53,7 +55,10 @@ inline bool C_Game::Game_Play()
 	food.RGB();
 	CheckFood();
 	food.Render();
+	CheckSnakeInBorders();
 	snake.Render();
+
+	
 
 	return 0;
 	//snake.ShowTailrectCoordinates();
@@ -93,4 +98,25 @@ inline bool C_Game::CheckSnakeDead()
 
 	return 0;
 
+}
+
+inline void C_Game::CheckSnakeInBorders()
+{
+	if (snake.GetRect().x < 0)
+	{
+		snake.SetSnakeheadPosition(WINDOW_SIZE - TAILRECT_SIZE, snake.GetRect().y);
+	}
+
+	else if (snake.GetRect().x >= WINDOW_SIZE)
+	{
+		snake.SetSnakeheadPosition(0, snake.GetRect().y);
+	}
+	else if (snake.GetRect().y < 0)
+	{
+		snake.SetSnakeheadPosition(snake.GetRect().x, WINDOW_SIZE - TAILRECT_SIZE);
+	}
+	else if (snake.GetRect().y >= WINDOW_SIZE)
+	{
+		snake.SetSnakeheadPosition(snake.GetRect().x, 0);
+	}
 }
