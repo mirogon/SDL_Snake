@@ -10,7 +10,8 @@ public:
 	~C_Game() = default;
 
 	bool Game_Play();
-
+	void Game_Over();
+	void Game_Reset();
 
 private:
 
@@ -57,6 +58,14 @@ inline bool C_Game::Game_Play()
 	return 0;
 	//snake.ShowTailrectCoordinates();
 
+}
+
+inline void C_Game::Game_Over()
+{	
+	SDL_SetRenderDrawColor(_GetRenderer, 0x80, 0x00, 0x00, 0xFF);
+	SDL_RenderClear(_GetRenderer);
+	food.Render();
+	snake.Render();
 }
 
 inline void C_Game::CheckFood()
