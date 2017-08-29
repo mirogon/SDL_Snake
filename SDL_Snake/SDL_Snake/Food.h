@@ -14,6 +14,11 @@ public:
 	void Despawn();
 	void Render();
 
+	const SDL_Rect& GetRect()
+	{
+		return foodRect;
+	}
+
 	bool IsEaten()
 	{
 		return eaten;
@@ -62,5 +67,9 @@ inline void C_Food::RGB()
 
 inline void C_Food::Render()
 {
-	SDL_RenderFillRect(_GetRenderer, &foodRect);
+	if (eaten == false)
+	{
+		SDL_RenderFillRect(_GetRenderer, &foodRect);
+	}
+	
 }

@@ -15,7 +15,15 @@ public:
 	void Eat();
 	void Move();
 	void Render();
+	const SDL_Rect& GetRect()
+	{
+		return _SNAKEHEAD;
+	}
 
+	const std::vector<SDL_Rect>& GetSnaketailRect()
+	{
+		return tailrects;
+	}
 	//Debug Functions
 
 	void ShowTailrectCoordinates()
@@ -28,8 +36,6 @@ public:
 
 			for (auto i = tailrects.begin(); i != tailrects.end(); ++i)
 			{
-
-
 				std::cout << "Tailrect " << n << " X: " << i->x << " Y: " << i->y << std::endl;
 
 				++n;

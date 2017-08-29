@@ -97,3 +97,8 @@ void C_Snake::Move()
 	}
 
 }
+
+void C_Snake::Eat()
+{
+	AddTailrect();
+}

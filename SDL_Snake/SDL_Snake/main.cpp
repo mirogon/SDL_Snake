@@ -25,7 +25,10 @@ int main(int argc, char* argv[])
 		SDL_SetRenderDrawColor(_GetRenderer, 0x00, 0x00, 0x00, 0xFF);
 		SDL_RenderClear(_GetRenderer);
 
-		game.Game_Play();
+		if (game.Game_Play() == 1)
+		{
+			quit = true;
+		}
 
 		SDL_RenderPresent(_GetRenderer);
 	}
