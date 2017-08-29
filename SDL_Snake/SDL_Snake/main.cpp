@@ -13,8 +13,10 @@ int main(int argc, char* argv[])
 
 	C_Game game;
 	E_GameState gameState = Game_Play;
+
 	bool quit = false;
 	bool keyDown = false;
+
 	SDL_Event ev;
 
 	while (quit == false)

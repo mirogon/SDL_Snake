@@ -34,7 +34,31 @@ void C_Snake::AddTailrect()
 
 void C_Snake::ChangeDirection(E_Direction newDirection)
 {
-	currentDirection = newDirection;
+
+	if (newDirection == Direction_Left && currentDirection == Direction_Right)
+	{
+
+	}
+
+	else if (newDirection == Direction_Right && currentDirection == Direction_Left)
+	{
+
+	}
+
+	else if (newDirection == Direction_Up && currentDirection == Direction_Down)
+	{
+
+	}
+
+	else if (newDirection == Direction_Down && currentDirection == Direction_Up)
+	{
+
+	}
+	else 
+	{
+		currentDirection = newDirection;
+	}
+
 }
 
 void C_Snake::Move()
