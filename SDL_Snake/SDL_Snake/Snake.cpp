@@ -5,8 +5,8 @@ C_Snake::C_Snake(int x, int y)
 	tailrects.push_back(SDL_Rect());
 	_SNAKEHEAD.x = x;
 	_SNAKEHEAD.y = y;
-	_SNAKEHEAD.w = tailrectSize;
-	_SNAKEHEAD.h = tailrectSize;
+	_SNAKEHEAD.w = TAILRECT_SIZE;
+	_SNAKEHEAD.h = TAILRECT_SIZE;
 
 	currentDirection = E_Direction::Direction_Right;
 }
@@ -19,15 +19,15 @@ void C_Snake::AddTailrect()
 
 	iT = tailrects.end() - 1;
 
-	iT->w = tailrectSize;
-	iT->h = tailrectSize;
+	iT->w = TAILRECT_SIZE;
+	iT->h = TAILRECT_SIZE;
 
 	switch (currentDirection)
 	{
-		case Direction_Left: iT->x = (iT - 1)->x + tailrectSize; iT->y = (iT - 1)->y; break;
-		case Direction_Right: iT->x = (iT - 1)->x - tailrectSize; iT->y = (iT - 1)->y; break;
-		case Direction_Up: iT->y = (iT - 1)->y + tailrectSize; iT->x = (iT - 1)->x; break;
-		case Direction_Down: iT->y = (iT - 1)->y - tailrectSize; iT->x = (iT - 1)->x; break;
+		case Direction_Left: iT->x = (iT - 1)->x + TAILRECT_SIZE; iT->y = (iT - 1)->y; break;
+		case Direction_Right: iT->x = (iT - 1)->x - TAILRECT_SIZE; iT->y = (iT - 1)->y; break;
+		case Direction_Up: iT->y = (iT - 1)->y + TAILRECT_SIZE; iT->x = (iT - 1)->x; break;
+		case Direction_Down: iT->y = (iT - 1)->y - TAILRECT_SIZE; iT->x = (iT - 1)->x; break;
 	}
 
 }
@@ -53,7 +53,7 @@ void C_Snake::Move()
 				i->y = (i - 1)->y;
 			}
 
-			_SNAKEHEAD.x -= tailrectSize;
+			_SNAKEHEAD.x -= TAILRECT_SIZE;
 		}
 
 		else if (currentDirection == Direction_Right)
@@ -65,7 +65,7 @@ void C_Snake::Move()
 				i->y = (i - 1)->y;
 			}
 
-			_SNAKEHEAD.x += tailrectSize;
+			_SNAKEHEAD.x += TAILRECT_SIZE;
 		}
 
 		else if (currentDirection == Direction_Up)
@@ -77,7 +77,7 @@ void C_Snake::Move()
 				i->y = (i - 1)->y;
 			}
 
-			_SNAKEHEAD.y -= tailrectSize;
+			_SNAKEHEAD.y -= TAILRECT_SIZE;
 		}
 
 		else if (currentDirection == Direction_Down)
@@ -89,7 +89,7 @@ void C_Snake::Move()
 				i->y = (i - 1)->y;
 			}
 
-			_SNAKEHEAD.y += tailrectSize;
+			_SNAKEHEAD.y += TAILRECT_SIZE;
 		}
 
 		lastTimeMoved = SDL_GetTicks();

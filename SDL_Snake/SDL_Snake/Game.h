@@ -46,6 +46,6 @@ inline void C_Game::Game_Play()
 	food.Render();
 	snake.Render();
 
-	snake.ShowTailrectCoordinates();
+	//snake.ShowTailrectCoordinates();
 
 }

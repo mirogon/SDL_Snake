@@ -5,17 +5,30 @@
 #include <stdlib.h>
 #include <M1Random.h>
 
-const float RGBTicks = 100;
-
-const int tailrectSize = 25;
-
-const int FOOD_SIZE = tailrectSize;
-
+//Snake 
+const int TAILRECT_SIZE = 25;
 const float snakeMoveTicks = 200;
-
 const SDL_Color tailrectColor{ 0xFF, 0xFF, 0xFF, 0xFF };
+#define _SNAKEHEAD tailrects[0]
 
+//Food
+const float RGBTicks = 100;
+const int FOOD_SIZE = TAILRECT_SIZE;
+
+//General
+const int WINDOW_SIZE = 500;
 enum E_Direction { Direction_Left = 0, Direction_Right = 1, Direction_Up = 2, Direction_Down = 3 };
 
-#define _SNAKEHEAD tailrects[0]
+
+
+
+
+
+
+
+
+
+
+
+
 
