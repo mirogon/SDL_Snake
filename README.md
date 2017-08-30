@@ -1,4 +1,4 @@
-#SDL_Snake
+# SDL_Snake
 
 Snake game made with C++/SDL2.
 
