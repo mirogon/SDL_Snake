@@ -7,7 +7,7 @@
 
 //Snake 
 const int TAILRECT_SIZE = 25;
-const float snakeMoveTicks = 200;
+const float snakeMoveTicks = 150;
 const SDL_Color tailrectColor{ 0xFF, 0xFF, 0xFF, 0xFF };
 #define _SNAKEHEAD tailrects[0]
 

@@ -21,6 +21,10 @@ int main(int argc, char* argv[])
 
 	while (quit == false)
 	{
+
+		static int fps = 0;
+		static Uint32 lastTime = SDL_GetTicks();
+
 		while (SDL_PollEvent(&ev) != 0)
 		{
 			if (ev.type == SDL_QUIT)
@@ -65,6 +69,15 @@ int main(int argc, char* argv[])
 		}
 		
 		SDL_RenderPresent(_GetRenderer);
+
+		if (SDL_GetTicks() - lastTime >= 1000)
+		{
+			std::cout << "FPS: " << fps << std::endl;
+			fps = 0;
+			lastTime = SDL_GetTicks();
+		}
+		++fps;
+
 	}
 	
 	

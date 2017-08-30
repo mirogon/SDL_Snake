@@ -4,6 +4,6 @@
   main.cpp
   Snake.cpp
   Generating code
-  All 152 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 162 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   SDL_Snake.vcxproj -> E:\Programming\C++\Projects\SDL_Snake\SDL_Snake\Release\SDL_Snake.exe
