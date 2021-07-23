@@ -8,3 +8,5 @@ Download the bin folder and start SDL_Snake.exe from there to test the game.
 Move - WASD
 
 Restart game - Enter
+
+.
